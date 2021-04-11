@@ -1,0 +1,43 @@
+.headingImage {
+    position: relative;
+    margin-top: 5rem;
+}
+
+#home-image {
+    width : 100%;
+    position:relative;
+}
+
+.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    color:white;
+  }
+
+p {
+    padding: 1rem;
+}
+
+.game img {
+    float:left;
+    height:10rem;
+    margin: 1rem;
+    box-shadow: 1rem;
+}
+
+.game {
+    margin-bottom: 10rem;
+}
+
+.point img {
+    margin: 1rem;
+    float:left;
+    height:5rem;
+}
+
+.point {
+    margin-bottom: 5rem;
+}
