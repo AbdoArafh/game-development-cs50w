@@ -19,6 +19,7 @@ nav {
     transform: translate(-50%, -50%);
     font-size: 3rem;
     color:white;
+    text-shadow: 2px 2px rgb(153, 147, 147);
   }
 
 p {
