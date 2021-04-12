@@ -17,10 +17,22 @@ nav {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 3rem;
+    font-size: 5rem;
     color:white;
     text-shadow: 2px 2px rgb(153, 147, 147);
   }
+
+@media (max-width:600px) {
+    .title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width:400px) {
+    .title {
+        font-size: 2rem;
+    }
+}
 
 p {
     padding: 1rem;
