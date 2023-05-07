@@ -1,0 +1,164 @@
+---
+export interface Props {
+  title: string;
+  image: string;
+  pathname: string;
+}
+
+const { title, image, pathname } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title>{title}</title>
+  </head>
+  <body class="d-flex flex-column">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a
+                  class={`nav-link ${pathname === "/" ? "disabled" : ""}`}
+                  href="/">Home</a
+                >
+              </li>
+              <li
+                class={`nav-link ${pathname === "/gamedev" ? "disabled" : ""}`}
+              >
+                <a class="nav-link" href="/gamedev">Game Development</a>
+              </li>
+              <li class={`nav-link ${pathname === "/aaa" ? "disabled" : ""}`}>
+                <a class="nav-link" href="/aaa">AAA Games</a>
+              </li>
+              <li class={`nav-link ${pathname === "/indie" ? "disabled" : ""}`}>
+                <a class="nav-link" href="/indie">Indie Games</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container hero">
+      <img id="home-image" src={image} alt="img" class="img-fluid opacity-75" />
+      <button
+        id="btn"
+        class="title text-white btn"
+        type="button"
+        onclick="alert('You found the hidden button! take a star on your forehead!')"
+      >
+        <h1 class="display-1"><strong>Games</strong></h1>
+      </button>
+    </div>
+    <main class="container">
+      <slot />
+    </main>
+    <div style="height:100px"></div>
+    <footer class="p-5 bg-light mt-auto">
+      &copy; All CopyRights reserved to me
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
+<style>
+  .hero {
+    min-height: 500px;
+    position: relative;
+  }
+
+  .hero .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+  }
+</style>
+
+<!-- <style>
+  .headingImage {
+    position: relative;
+    margin-top: 5rem;
+  }
+
+  #home-image {
+    width: 100%;
+    position: relative;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    color: white;
+    text-shadow: 2px 2px rgb(153, 147, 147);
+  }
+
+  @media (max-width: 600px) {
+    .title {
+      font-size: 3rem;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .title {
+      font-size: 2rem;
+    }
+  }
+
+  p {
+    padding: 1rem;
+  }
+
+  .game img {
+    float: left;
+    height: 10rem;
+    margin: 1rem;
+    box-shadow: 1rem;
+  }
+
+  .game {
+    margin-bottom: 10rem;
+  }
+
+  .point img {
+    margin: 1rem;
+    float: left;
+    height: 5rem;
+  }
+
+  .point {
+    margin-bottom: 5rem;
+  }
+</style> -->
